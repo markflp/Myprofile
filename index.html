@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>phandomas | The Godfather of Code</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <video autoplay loop muted playsinline class="main-background-video">
+        <source src="./public/background.mp4" type="video/mp4">
+    </video>
+    
+    <div class="overlay-glow"></div>
+
+    <div class="container">
+        <div class="nitro-glow-wrapper">
+            <div class="profile-card">
+                
+                <div class="banner-wrapper">
+                    <video autoplay loop muted playsinline class="banner-video">
+                        <source src="./public/coding.mp4" type="video/mp4">
+                    </video>
+                    <div class="banner-fade"></div>
+                </div>
+
+                <div class="header-content">
+                    <div class="avatar-stack">
+                        <div class="avatar-decoration"></div>
+                        <img src="./public/glasses.webp" class="avatar" alt="phandomas">
+                        <div class="status-pulse dnd"></div>
+                    </div>
+                </div>
+
+                <div class="profile-body">
+                    <div class="identity-row">
+                        <div class="name-container">
+                            <h1>phandomas</h1>
+                            <div class="official-badges">
+                                <div class="badge-item" data-tooltip="Verified Bot Developer">
+                                    <img src="./public/badges/early-verified-bot-developer.svg" alt="Dev" width="22">
+                                </div>
+                                <div class="badge-item" data-tooltip="Early Supporter">
+                                    <img src="./public/badges/early-supporter.svg" alt="Supporter" width="22">
+                                </div>
+                                <div class="badge-item" data-tooltip="Nitro Subscriber">
+                                    <img src="./public/badges/nitro.svg" alt="Nitro" width="22">
+                                </div>
+                                <div class="badge-item" data-tooltip="Server Booster (24 Months)">
+                                    <img src="./public/badges/boost-24-month.svg" alt="Booster" width="22">
+                                </div>
+                            </div>
+                        </div>
+                        <p class="headline">Software Architect & Lead Developer</p>
+                    </div>
+
+                    <div class="custom-divider"></div>
+
+                    <div class="main-scroll-area">
+                        <div class="content-section">
+                            <h3>ABOUT ME</h3>
+                            <div class="glass-box about-text">
+                                <p>I am the architect behind the scenes, turning complex logic into reality through clean, efficient code. Specializing in high-performance environments and scalable community platforms.</p>
+                                <div class="motto-box">
+                                    <span class="motto-text">"I'm gonna make them an offer they can't refuse... optimal code."</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h3>LISTENING TO SPOTIFY</h3>
+                            <div class="spotify-widget">
+                                <div class="spotify-main">
+                                    <div class="album-container">
+                                        <img src="./public/album-art.jpg" class="album-spin" alt="Art">
+                                    </div>
+                                    <div class="song-meta">
+                                        <span class="song-title">The Godfather Waltz</span>
+                                        <span class="song-artist">by Nino Rota</span>
+                                    </div>
+                                    <i class="fab fa-spotify spotify-logo"></i>
+                                </div>
+                                <div class="spotify-progress">
+                                    <div class="bar-bg"><div class="bar-fill"></div></div>
+                                    <div class="timestamps"><span>1:24</span><span>3:05</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h3>ROLES & STACK</h3>
+                            <div class="roles-container">
+                                <div class="role-pill owner"><i class="fas fa-crown"></i> Owner</div>
+                                <div class="role-pill gamer"><i class="fas fa-gamepad"></i> Gamer</div>
+                                <div class="role-pill python"><i class="fab fa-python"></i> Python</div>
+                                <div class="role-pill cpp"><i class="fas fa-microchip"></i> C / C++</div>
+                                <div class="role-pill js"><i class="fab fa-js"></i> JavaScript</div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h3>CONNECTIONS</h3>
+                            <div class="conn-grid icon-only">
+                                <a href="https://www.youtube.com/@master_0356" target="_blank" class="conn-link yt" data-tooltip="YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                    <i class="fas fa-external-link-alt mini-icon"></i>
+                                </a>
+                                <a href="https://discord.gg/kn7sCwc59H" target="_blank" class="conn-link dc" data-tooltip="Discord">
+                                    <i class="fab fa-discord"></i>
+                                    <i class="fas fa-external-link-alt mini-icon"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-chat">
+                        <input type="text" placeholder="Στείλε μήνυμα στον @phandomas">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script>
+        VanillaTilt.init(document.querySelector(".profile-card"), {
+            max: 5, speed: 400, glare: true, "max-glare": 0.2,
+        });
+        const card = document.querySelector(".profile-card");
+        card.onmousemove = e => {
+            const rect = card.getBoundingClientRect(),
+                  x = e.clientX - rect.left,
+                  y = e.clientY - rect.top;
+            card.style.setProperty("--mouse-x", `${x}px`);
+            card.style.setProperty("--mouse-y", `${y}px`);
+        };
+    </script>
+</body>
+</html>
